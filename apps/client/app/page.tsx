@@ -16,8 +16,8 @@ export default async function Home() {
         }}
       />
       <DustParticles />
-      {/* <Navbar /> */}
-      <TestNav/>
+      <Navbar />
+      {/* <TestNav/> */}
       <LandingSection />
     </div>
   );

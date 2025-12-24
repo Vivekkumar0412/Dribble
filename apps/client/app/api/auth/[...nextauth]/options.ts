@@ -25,6 +25,7 @@ export const authoptions: AuthOptions = {
                         account,
                     });
                     const result = response.data;
+                    console.log(result,"---------------------------------------")
                     if (result?.success) {
                         user.id = result.user.id.toString();
                         user.token = result.token;
