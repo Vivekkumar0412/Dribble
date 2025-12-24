@@ -13,7 +13,7 @@ export default function LandingSection(): JSX.Element {
             <div className="">
                 <h1 className={cn(
                     "text-[150px] text-[rgb(242, 243, 249)] text-center",
-                    "tracking-widest text-transparent bg-clip-text bg-linear-to-b from-white via-neutral-500 to-black",
+                    "tracking-widest text-transparent bg-clip-text bg-linear-to-b from-white via-neutral-400 to-black",
                     protest.className,
                 )}>
                     Dribble

@@ -132,7 +132,9 @@ body {
   --color-darker: #0a0a0a;
   --color-dark: #16181C;
    --color-primary: #F9452C;
-  --color-light: #FFFFFF
+  --color-light: #FFFFFF;
+  --color-light-gray: #545456;
+  
 }
 
 @layer base {

@@ -81,7 +81,7 @@ export default function BiggerNav({ setOpenNavbar}: BiggerNavbarProps) {
 
     return (
         <motion.div 
-            className="w-full h-fit bg-[#545456] flex justify-center items-end flex-col gap-y-4 p-10  text-2xl z-999 absolute"
+            className="w-full h-fit bg-light-gray flex justify-center items-end flex-col gap-y-4 p-10  text-2xl z-999 absolute"
             variants={containerVariants}
             initial="hidden"
             animate="visible"

@@ -1,14 +1,17 @@
 import { prisma } from "@repo/database";
 import { Request, Response } from "express";
-
+import { chatSchema } from "@repo/types";
 export default async function userPromptController(req : Request, res : Response){
-    const {prompt} = req.body;
-    if(!prompt || prompt == ""){
+    const prompt = chatSchema.safeParse(req.body);
+    if(!prompt.success){
         return res.status(400).json({
             success : false,
-            message : "User prompt is empty"
+            message : "User prompt is invalid"
         })
     };
+
+
+    const validPrompt = prompt.data.prompt;
     const currentUser = req.user;
     if(!currentUser || typeof currentUser === 'string'){
         return res.status(404).json({
@@ -26,9 +29,9 @@ export default async function userPromptController(req : Request, res : Response
     }
 
     try {
-        const response = await prisma.userPrompts.create({
+        const response = await prisma.chat.create({
             data :{
-                prompt : prompt,
+                prompt : validPrompt,
                 userId : userId
             }
         });
